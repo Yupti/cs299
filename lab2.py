@@ -1,5 +1,5 @@
 import random
-'''
+
 weight = float(input("Please enter a weight in pounds: "))
 height = float(input("Please enter a height in inches: "))
 bmi = round(weight / height**2 * 703, 1)
@@ -12,27 +12,47 @@ elif (bmi <= 29.9):
     print("You are overweight.")
 else:
     print("You are obese.")
-'''
+
 print("Rock-Paper-Scissors Game!")
-userWin = 0
+userWin = 0 # keeps track of scores
 compWin = 0
 tie = 0
-userChoice = input("Enter 'rock', 'paper', 'scissors', or 'exit' to quit: ")
-userChoice = userChoice.lower()
-while (userChoice != "exit"):
-    if (userChoice != "rock" or userChoice != "paper" or userChoice != "scissors" or userChoice != "quit"):
-        print("Fail")
-        while (userChoice != "rock" or userChoice != "paper" or userChoice != "scissors"):
-            userChoice = input("Enter 'rock', 'paper', 'scissors', or 'exit' to quit: ")
-            userChoice = userChoice.lower()
-            if (userChoice == "quit"):
-                break
-            else:
-                compChoice = random.choice(["rock","paper","scissors"])
-                print("User choice is:", userChoice)
-                print("Computer choice is:", compChoice)
+repeat = True # keeps game going
 
-else:
-    print("Thanks for playing!")
+while (repeat == True):
+    userChoice = input("Enter 'rock', 'paper', 'scissors', or 'exit' to quit: ")
+    userChoice = userChoice.lower()
+    compChoice = random.choice(["rock","paper","scissors"])
+    print("You chose:", userChoice, " Computer chose:", compChoice)
+    if (userChoice == compChoice):
+        print("It's a tie!")
+        tie += 1
+    elif (userChoice == "rock"):
+        if (compChoice == "scissors"):
+            print("You win! Rock beats scissors!")
+            userWin += 1
+        else:
+            print("You lose! Paper beats rock!")
+            compWin += 1
+    elif (userChoice == "paper"):
+        if (compChoice == "rock"):
+            print("You win! Paper beats rock!")
+            userWin += 1
+        else:
+            print("You lose! Scissors beats paper!")
+            compWin += 1
+    elif (userChoice == "scissors"):
+        if (compChoice == "paper"):
+            print("You win! Scissors beats paper!")
+            userWin += 1
+        else:
+            print("You lose! Rock beats scissors!")
+            compWin += 1
+    elif (userChoice == "exit"):
+        print("Final scores: User:", userWin, " Computer:", compWin, " Tie:", tie)
+        repeat = False
+    else:
+        print("Please enter a valid choice!")
+print("Thanks for playing!")
 
 

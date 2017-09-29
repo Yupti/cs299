@@ -19,12 +19,12 @@ compWin = 0
 tie = 0
 repeat = True # keeps game going
 
-while (repeat == True):
+while (repeat == True): # while loop for continuous games
     userChoice = input("Enter 'rock', 'paper', 'scissors', or 'exit' to quit: ")
-    userChoice = userChoice.lower()
-    compChoice = random.choice(["rock","paper","scissors"])
+    userChoice = userChoice.lower() # user input lowercased
+    compChoice = random.choice(["rock","paper","scissors"]) # random choice by computer
     print("You chose:", userChoice, " Computer chose:", compChoice)
-    if (userChoice == compChoice):
+    if (userChoice == compChoice): # both choices are the same
         print("It's a tie!")
         tie += 1
     elif (userChoice == "rock"):
@@ -48,11 +48,59 @@ while (repeat == True):
         else:
             print("You lose! Rock beats scissors!")
             compWin += 1
-    elif (userChoice == "exit"):
+    elif (userChoice == "exit"): # exits loop, displays scores
         print("Final scores: User:", userWin, " Computer:", compWin, " Tie:", tie)
         repeat = False
     else:
         print("Please enter a valid choice!")
 print("Thanks for playing!")
 
+'''
+test results for BMI calculator
 
+Please enter a weight in pounds: 160
+Please enter a height in inches: 60
+Your BMI is: 31.2
+You are obese.
+
+Please enter a weight in pounds: 160
+Please enter a height in inches: 65
+Your BMI is: 26.6
+You are overweight.
+
+Please enter a weight in pounds: 160
+Please enter a height in inches: 70
+Your BMI is: 23.0
+You are normal.
+
+Please enter a weight in pounds: 160
+Please enter a height in inches: 80
+Your BMI is: 17.6
+You are underweight.
+
+test results for rock paper scissors game
+
+Rock-Paper-Scissors Game!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: rock
+You chose: rock  Computer chose: rock
+It's a tie!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: rock
+You chose: rock  Computer chose: scissors
+You win! Rock beats scissors!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: paper
+You chose: paper  Computer chose: paper
+It's a tie!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: scissors
+You chose: scissors  Computer chose: rock
+You lose! Rock beats scissors!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: paper
+You chose: paper  Computer chose: rock
+You win! Paper beats rock!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: rock
+You chose: rock  Computer chose: scissors
+You win! Rock beats scissors!
+Enter 'rock', 'paper', 'scissors', or 'exit' to quit: exit
+You chose: exit  Computer chose: paper
+Final scores: User: 3  Computer: 1  Tie: 2
+Thanks for playing!
+'''

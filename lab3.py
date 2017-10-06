@@ -33,7 +33,7 @@ def organizedNums(*args):
       return counter, largestNum, smallestNum
 
 def shopList(item, tax, *args):
-   print("Item:", item, " Tax rate:", tax, "Purchases:", end = ' ')
+   print("Item:", item, " Tax rate:", tax, "% Purchases:", end = ' ')
    total = 0.0
    for arg in args:
       print(arg, end = '  ')
@@ -49,8 +49,8 @@ if __name__ == "__main__":
 0 0 0
 1 5 5
 8 21 2
-Item: Fruits  Tax rate: 8 Purchases: 80  125  45.5  Total is: 270.54
-Item: Furniture  Tax rate: 10.5 Purchases: 950  Total is: 1049.75
-Item: Toys  Tax rate: 7.5 Purchases: 12  5.5  6.5  7.5  9.0  Total is: 43.54
+Item: Fruits  Tax rate: 8 % Purchases: 80  125  45.5  Total is: 270.54
+Item: Furniture  Tax rate: 10.5 % Purchases: 950  Total is: 1049.75
+Item: Toys  Tax rate: 7.5 % Purchases: 12  5.5  6.5  7.5  9.0  Total is: 43.54
 '''
     

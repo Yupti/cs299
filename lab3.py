@@ -48,6 +48,7 @@ def compute(item, tax, *args):
    total = round(total, 2)
    print("Total is:", total)
                 
-                
+if __name__ == "__main__":
+   main()
             
     

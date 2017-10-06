@@ -5,7 +5,7 @@ def main():
    print(x,y,z)
 
    itemList = []
-   price = 1
+   price = 1.0
    item = input("Enter item name: ")
    tax = float(input("Enter tax rate: "))
    while price > 0:
@@ -39,9 +39,14 @@ def organizedNums():
 
 def compute(item, tax, *args):
    print("Item:", item, " Tax rate:", tax, "Purchases:", end = ' ')
+   total = 0.0
    for arg in args:
       for i in arg:
-         print(i, end = '  ')             
+         print(i, end = '  ')
+         total += i
+   total = float(total + (total * tax / 100))
+   total = round(total, 2)
+   print("Total is:", total)
                 
                 
             

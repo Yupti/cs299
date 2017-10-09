@@ -65,6 +65,8 @@ def monteCarlo(cases):
   endTime = time.time() - startTime # calculates elapsed time
   print("Test for", cases, "cases: Count:", count, " Pi Value:", piValue, " Elapsed Time:", endTime)
 
+if __name__ == "__main__":
+  main()
 '''
 Enter a sentence to turn into an acronym:  Natural apples by the oranges
 Acronym is: NATO

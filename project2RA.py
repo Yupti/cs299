@@ -25,38 +25,37 @@ def main(): # to call keyGen and substitution encrypt
 def substitutionEncrypt(key, *args): # for converting word into code word, done
     newWord = ""
     if key == "":
-        key = "bpzhgocvjdqswkimlutneryaxf"
-    print("Key: ", key)
+        key = "bpzhgocvjdqswkimlutneryaxf" # default key
+    print("Key: ", key + "\n")
     for word in args:
         for i in word:
-            newWord += key[(ord(i) - 97)]
+            newWord += key[(ord(i) - 97)] # converts letter in word with a letter in key
         print("Word: ", word, " Code Word: ", newWord, "\n")
         newWord = ""
 
-def keyGen(): # for random key generator, done
+def keyGen(): # for random key generator
     defaultKey = "bpzhgocvjdqswkimlutneryaxf"
-    randomizedKey = ''.join(random.sample(defaultKey,len(defaultKey)))
+    randomizedKey = ''.join(random.sample(defaultKey,len(defaultKey))) # randomizes the default key
     if defaultKey == randomizedKey:
-        while defaultKey == randomizedKey:
+        while defaultKey == randomizedKey: # case where default and randomkey happen to be the same
             randomizedKey = ''.join(random.sample(randomizedKey,len(randomizedKey)))
     return randomizedKey
 
 
-def barcode(zip): #in progress
+def barcode(zip): 
     sum = 0
     zipList = []
     barCodeList = [1]
-    num = zip.split("-")
-    for i in num:
+    num = zip.split("-") # splits zip code
+    for i in num: # uses all integers that are separated
         convertNum = str(i)
         for j in convertNum:
-            sum += int(j)
-            zipList.append(int(j))
-    print(sum)
+            sum += int(j) # holds sum for check sum value
+            zipList.append(int(j)) # adds integer to convert to barcode
     sum = sum % 10
     digit = 10 - sum # holds digit to add to end of zip code
     zipList.append(digit)
-    for i in zipList:
+    for i in zipList: # for appending integer barcodes
         if i == 0:
             barCodeList.extend([1, 1, 0, 0, 0])
         elif i == 1:
@@ -79,21 +78,19 @@ def barcode(zip): #in progress
             barCodeList.extend([1, 0, 1, 0, 0])
     barCodeList.append(1)
 
-    print(barCodeList)
     franklin = turtle.Turtle()
     franklin.pensize(2)
-    list1 = [30, 30, 20, 50, 20]
     x = 4
     for i in barCodeList:
         franklin.setheading(90)
         if i == 1:
-            franklin.forward(50) # upwards
+            franklin.forward(50) # upwards motion on '1'
         else:
-            franklin.forward(30)
+            franklin.forward(30) # upwards motion on '0'
         franklin.penup()
         franklin.home()
         franklin.right(0)
-        franklin.forward(x) # rightwards
+        franklin.forward(x) # rightwards motion
         franklin.pendown()
         x += 4
     franklin.done()

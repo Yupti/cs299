@@ -35,7 +35,7 @@ def q1():
     sentence = "Hello, Welcome to Python"
     print("sentence set to:", sentence)
     print("Python in sentence:", "Python" in sentence)
-    print("min('Python')", min("Python"))
+    print("min('Python'):", min("Python"))
     seasons = ['Spring','Summer','Fall','Winter']
     print("seasons contains:", seasons)
     print("list(enumerate(seasons, start = 1)):", list(enumerate(seasons, start = 1)), "\n")
@@ -97,3 +97,62 @@ def getScore(name, tDict):
 
 if __name__ == "__main__":
     main()
+
+'''
+Q1
+L1 contains: [1, 2, 3, 4, 5] 
+L2 contains: [2, 3, 4, 5, 1, 0] 
+L3 contains: ['1', '2', '3', '4', '5']
+L1 < L2: True
+L1 != L2: True
+L1 > L3: unable to compare, one has str, one has int
+L1 and L2: [2, 3, 4, 5, 1, 0]
+not L3: False
+not []: True
+L1 = [1,2], L2 = [1,2], L3 = L1
+L1 is L2: False
+L1 is L3: True
+sentence set to: Hello, Welcome to Python
+Python in sentence: True
+min('Python'): P
+seasons contains: ['Spring', 'Summer', 'Fall', 'Winter']
+list(enumerate(seasons, start = 1)): [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')] 
+
+Q2
+Results of the dictionary
+joe : 10
+tom : 17
+barb : 20
+sue : 18
+sally : 15
+
+
+Q3
+Intersection of the set and frozenset
+{('tom', 17), ('sue', 18)} 
+
+Q4
+Adding entry 'john' with a score of 19...
+Adding existing entry 'sue' with a score of 20...
+Updating entry 'sally' with a score of 19...
+Removing entry 'tom' and his score from the dictionary...
+Printing current students and scores in alphabetical order.
+('barb', 20)
+('joe', 10)
+('john', 19)
+('sally', 19)
+('sue', 20)
+
+
+Q5
+Adding scores of students in dictionary to calculate median...
+Median of scores is: 17.6 
+
+Q6
+Locating score for student john
+Score of student john is 19 
+
+Q6
+Locating score for student ana
+The student ana was not found
+'''

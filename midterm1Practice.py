@@ -2,7 +2,7 @@ import math
 
 def main():
     q1()
-    #q2()
+    q2()
     q3()
     q4()
     q5()
@@ -12,15 +12,12 @@ def q1():
     num = 35.6
     print(math.sqrt(num))
 
-def q2(): #idk
-    primeList = [i for i in range(2,20,isPrime(i))]
+def q2(): 
+    primeList = [i for i in range(2,1000) if isPrime(i)]
+    print(primeList)
 
-def isPrime(num): #idk
-    for i in range(2,num):
-        if (num % i) == 0:
-            return False
-    else:
-        return True
+def isPrime(num): 
+    return all(num % i for i in range(2,num))
 
 def q3():
     L = [("Ted",9),("Alice",10),("Aaron", 11)] #list of tuple

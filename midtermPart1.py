@@ -30,8 +30,7 @@ def checks(name, baseFee, *args):
         totalFee += (totalChecks * 0.05)
     else:
         totalChecks += 10
-        totalFee += (totalChecks * 0.05)
-        totalChecks -= totalChecks 
+        totalFee += (totalChecks * 0.05) 
 
     totalFee = round(totalFee, 2)
     print("Name:", name, "\tTotal fee:", totalFee)

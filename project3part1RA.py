@@ -5,28 +5,7 @@ def main():
     mags = []
     categories = [0,0,0,0,0,0,0,0,0,0]
     mags = readFile(mags)
-    
-    for i in mags:
-        if i < 0.7:
-            categories[0] += 1
-        elif i < 1.4:
-            categories[1] += 1
-        elif i < 2.1:
-            categories[2] += 1
-        elif i < 2.8:
-            categories[3] += 1
-        elif i < 3.5:
-            categories[4] += 1
-        elif i < 4.2:
-            categories[5] += 1
-        elif i < 4.9:
-            categories[6] += 1
-        elif i < 5.6:
-            categories[7] += 1
-        elif i < 6.3:
-            categories[8] += 1
-        else:
-            categories[9] += 1
+    categories = counter(mags, categories)  
     drawing(categories)
 
 def readFile(mags):
@@ -34,7 +13,7 @@ def readFile(mags):
     fileName = "all_month.csv"
     with open(fileName, newline = '') as file:
         reader = csv.reader(file)
-        for row in reader: # row[4] should be mag
+        for row in reader:
             mags.append(row[4])
     mags = listCleanse(mags, 'mag')
     mags = listCleanse(mags, '')
@@ -42,11 +21,34 @@ def readFile(mags):
         val = float(i)
         if val > 0.0:
             newMags.append(val)
-    #print("Highest is:", max(newMags)) #6.7 is high
     return newMags
 
 def listCleanse(theList, val):
     return [value for value in theList if value != val]
+
+def counter(M, C):
+    for i in M:
+        if i < 0.7:
+            C[0] += 1
+        elif i < 1.4:
+            C[1] += 1
+        elif i < 2.1:
+            C[2] += 1
+        elif i < 2.8:
+            C[3] += 1
+        elif i < 3.5:
+            C[4] += 1
+        elif i < 4.2:
+            C[5] += 1
+        elif i < 4.9:
+            C[6] += 1
+        elif i < 5.6:
+            C[7] += 1
+        elif i < 6.3:
+            C[8] += 1
+        else:
+            C[9] += 1
+    return C
 
 def drawing(cats):
     holder = [0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7.0]

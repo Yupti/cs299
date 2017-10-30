@@ -116,6 +116,8 @@ def drawing(cats):
     t.setheading(90)
     t.forward(630)
     t.write("Histogram of Earthquakes (past 30 days)")
+
+    window.exitonclick()
     
 if __name__ == "__main__":
     main()

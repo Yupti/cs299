@@ -1,10 +1,9 @@
-
-
 def main():
     names = "names.txt"
     codes = "codes.txt"
     compressed = readAndCreate(names, codes)
-    addNew("samwoo","1111111A1#a112", compressed)
+    compressed = addNew("sefds","22a#22222222", compressed)
+    #login(compressed)
 
 def readAndCreate(names, codes):
     L1 = []
@@ -20,14 +19,16 @@ def readAndCreate(names, codes):
         row = line2.split()
         L2.extend(row)
 
-    book.close() # needs confirm
-    book2.close() # same as above
+    book.close() 
+    book2.close() 
     compressed = dict(zip(L1, L2))
     return compressed
 
 def addNew(name, pw, dBase):
     if verifyName(name, dBase) and verifyPW(pw, dBase):
         print("Requirements met, able to add to dictionary.")
+        dBase[name] = pw
+        return dBase
     else:
         print("Either username or password does not meet a requirement, unable to add new entry.")
 
@@ -72,6 +73,16 @@ def verifyPW(pw, dBase):
     else:
         print("The new password can be used.")
         return True
+
+def login(dBase):
+    username = input("Enter a username to login: ")
+    password = input("Enter the password for the username: ")
+
+    for i,j in dBase.items():
+        if i == username and j == password:
+            print("Login is successful!")
+            return
+    print("Username and/or password is not found in the database.")
     
 if __name__ == "__main__":
     main()

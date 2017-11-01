@@ -1,9 +1,17 @@
 def main():
     names = "names.txt"
     codes = "codes.txt"
+    
     compressed = readAndCreate(names, codes)
-    compressed = addNew("sefds","22a#22222222", compressed)
-    #login(compressed)
+    
+    compressed = addNew("Yupti", "asdf123$$", compressed)
+    compressed = addNew("gantu06", "strOG#25", compressed)
+    compressed = addNew("crazytyler", "__gr3at__", compressed)
+    
+    login("Yupti", "asdf123$$", compressed)
+    login("lisaAn1", "X&122343", compressed)
+    login("claskupo", "difj23D*&", compressed)
+    login("jimbo", "flags8%", compressed)
 
 def readAndCreate(names, codes):
     L1 = []
@@ -25,12 +33,14 @@ def readAndCreate(names, codes):
     return compressed
 
 def addNew(name, pw, dBase):
+    print("Attempting to add user:", name, " with password:", pw)
     if verifyName(name, dBase) and verifyPW(pw, dBase):
-        print("Requirements met, able to add to dictionary.")
+        print("Requirements met, able to add to dictionary.\n")
         dBase[name] = pw
         return dBase
     else:
-        print("Either username or password does not meet a requirement, unable to add new entry.")
+        print("Either username or password does not meet a requirement, unable to add new entry.\n")
+        return dBase
 
 def verifyName(name, dBase):
     if name[0].isalpha():
@@ -74,15 +84,13 @@ def verifyPW(pw, dBase):
         print("The new password can be used.")
         return True
 
-def login(dBase):
-    username = input("Enter a username to login: ")
-    password = input("Enter the password for the username: ")
-
+def login(username, password, dBase):
+    print("Attempting to log in with user:", username, "password:", password)
     for i,j in dBase.items():
         if i == username and j == password:
-            print("Login is successful!")
+            print("Login is successful!\n")
             return
-    print("Username and/or password is not found in the database.")
+    print("ACCESS DENIED: Username and/or password is not found in the database.\n")
     
 if __name__ == "__main__":
     main()

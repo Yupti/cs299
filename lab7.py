@@ -32,13 +32,10 @@ def scoreDictionary():
             for row in reader:
                 name = ""
                 inScoreList = []
-                name += row.pop(0) + " "
-                name += row.pop(0)
+                name += row.pop(0) # took out a row.pop(), hopefully is ok
                 print("Name:", name)
                 nameList.append(name)
                 for i in row:
-                    if i == "X" or i == "NA" or i == "P":
-                        raise InvalidScoreError
                     inScoreList.append(i)
                 scoreList.append(inScoreList) #does what its supposed to
     except InvalidScoreError:

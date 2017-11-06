@@ -1,1 +1,1 @@
-# cs299
+# Everything is ordered by categories w/ corresponding support files

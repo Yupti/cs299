@@ -92,3 +92,71 @@ def main():
 
 if __name__ == '__main__':
 	main()
+
+'''
+OUTPUT
+Test #1
+You are at the starting position, 0
+Combination is: [2, 9, 1]
+Turning 2 ticks right
+You are at position: 2
+Turning 3 ticks left
+You are at position: 9
+Turning 1 ticks right
+You are at position: 0
+Attempting to open lock...
+User: [2, 9, 0]
+Combo: [2, 9, 1]
+Failed to open lock, please reset.
+You have reset the entire lock, now at 0
+Combination is: [2, 9, 1]
+Turning 2 ticks right
+You are at position: 2
+Turning 3 ticks left
+You are at position: 9
+Turning 2 ticks right
+You are at position: 1
+Attempting to open lock...
+User: [2, 9, 1]
+Combo: [2, 9, 1]
+Opened lock successfully!
+
+Test #2
+You are at the starting position, 0
+Combination is: [2, 9, 1]
+Turning 2 ticks right
+You are at position: 2
+Turning 3 ticks left
+You are at position: 9
+Attempting to open lock...
+User: [2, 9]
+Combo: [2, 9, 1]
+You have turned the lock too many or too few times, please reset.
+You have reset the entire lock, now at 0
+Combination is: [2, 9, 1]
+Turning 2 ticks right
+You are at position: 2
+Turning 3 ticks left
+You are at position: 9
+Turning 2 ticks left
+You are at position: 7
+Attempting to open lock...
+User: [2, 9, 7]
+Combo: [2, 9, 1]
+You have turned the lock in the wrong order, please reset.
+
+Test #3
+You are at the starting position, 0
+Combination is: [6, 3, 4]
+Turning 6 ticks right
+You are at position: 6
+Turning 3 ticks left
+You are at position: 3
+Turning 1 ticks right
+You are at position: 4
+Attempting to open lock...
+User: [6, 3, 4]
+Combo: [6, 3, 4]
+Opened lock successfully!
+
+'''
